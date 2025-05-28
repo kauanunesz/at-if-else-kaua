@@ -14,11 +14,15 @@
   </style>
 </head>
 <body class="bg-light">
+<nav class="navbar navbar-dark bg-dark">
+          <a class="navbar-brand" href="home.html" style="margin-left: 20px;">Home</a>
+        </nav>
   <div class="d-flex justify-content-center align-items-center min-vh-100">
     <div class="card resultado-card text-white bg-dark">
       <div class="card-header">Resultado</div>
       <div class="card-body">
         <?php
+        $nome = $_POST['nomeAluno'] ?? null;
         $nota1 = $_POST['nota1'] ?? null;
         $nota2 = $_POST['nota2'] ?? null;
         $nota3 = $_POST['nota3'] ?? null;
@@ -31,13 +35,17 @@
             echo '<div class="alert alert-danger">Por favor, insira apenas números válidos para as três notas.</div>';
         } else {
             $media = ($nota1 + $nota2 + $nota3) / 3;
-            if ($media >= 7) {
-                echo '<div class="alert alert-success">Aluno aprovado com média ' . number_format($media, 2, ',', '.') . '</div>';
-            } else {
-                echo '<div class="alert alert-warning">Aluno reprovado com média ' . number_format($media, 2, ',', '.') . '</div>';
+            if ($media >= 7 && $media <= 10) {
+                echo '<div class="alert alert-success">Aluno ' . $nome . ' aprovado com média ' . number_format($media, 2, ',', '.') . '</div>';
+            } elseif ($media < 7 && $media >=0) {
+              echo '<div class="alert alert-success">Aluno ' . $nome . ' reprovado com média ' . number_format($media, 2, ',', '.') . '</div>';
+            } else{
+              echo '<div class="alert alert-success">Algum valor foi inválido. Por favor, tente novamente</div>';
             }
+
         }
         ?>
+        <a href="ex1_form.html"><button type="button" class="btn btn-light">Voltar</button></a>
       </div>
     </div>
   </div>
