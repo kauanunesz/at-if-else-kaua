@@ -38,9 +38,9 @@
             if ($media >= 7 && $media <= 10) {
                 echo '<div class="alert alert-success">Aluno ' . $nome . ' aprovado com média ' . number_format($media, 2, ',', '.') . '</div>';
             } elseif ($media < 7 && $media >=0) {
-              echo '<div class="alert alert-success">Aluno ' . $nome . ' reprovado com média ' . number_format($media, 2, ',', '.') . '</div>';
+              echo '<div class="alert alert-danger">Aluno ' . $nome . ' reprovado com média ' . number_format($media, 2, ',', '.') . '</div>';
             } else{
-              echo '<div class="alert alert-success">Algum valor foi inválido. Por favor, tente novamente</div>';
+              echo '<div class="alert alert-danger">Algum valor foi inválido. Por favor, tente novamente</div>';
             }
 
         }

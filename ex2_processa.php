@@ -27,15 +27,15 @@ $temp = $_POST['temperatura'] ?? null;
         }
         elseif ($temp >= 0 && $temp < 15)
         {
-          echo '<div class="alert alert-danger">Está <strong>Muito Frio<strong></div>';
+          echo '<div class="alert alert-success">Está <strong>Muito Frio<strong></div>';
         }
         elseif($temp >= 15 && $temp < 25)
         {
-          echo '<div class="alert alert-danger">A temperatura está <strong>Razoável<strong></div>';
+          echo '<div class="alert alert-success">A temperatura está <strong>Razoável<strong></div>';
         }
         elseif ($temp >= 25 && $temp < 40)
         {
-          echo '<div class="alert alert-danger">Está <strong>Calor<strong></div>';
+          echo '<div class="alert alert-success">Está <strong>Calor<strong></div>';
         }
         elseif($temp >= 40)
         {
@@ -47,7 +47,7 @@ $temp = $_POST['temperatura'] ?? null;
 
 
         ?>
-        <a href="ex1_form.html"><button type="button" class="btn btn-light">Voltar</button></a>
+        <a href="ex2_form.html"><button type="button" class="btn btn-light">Voltar</button></a>
       </div>
     </div>
         </div>
